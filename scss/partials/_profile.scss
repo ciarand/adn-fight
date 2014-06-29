@@ -1,0 +1,21 @@
+.profile-container {
+    @include outer-container;
+    margin-bottom: 2em;
+}
+
+.profile {
+    @include span-columns(5 of 12);
+    @include omega(2n);
+}
+
+.hero__vs {
+    @include span-columns(2 of 12);
+}
+
+.profile__name {
+    font-size: golden-ratio(14px,  3);
+}
+
+.profile__img {
+    border-radius: 50%;
+}

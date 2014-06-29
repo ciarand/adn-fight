@@ -1,0 +1,181 @@
+{
+    "data": [
+        {
+            "avatar_image": {
+                "height": 200,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/Nkt5V8pUX7rkoM0O1uILB1INnXN7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvMjcvYjAvOTAvMjdiMDkwMDAwMDAwMDAwMC5wbmciLCJvIjoiIn0",
+                "width": 200
+            },
+            "canonical_url": "https://alpha.app.net/rabryst",
+            "counts": {
+                "followers": 419,
+                "following": 1008,
+                "posts": 23897,
+                "stars": 6681
+            },
+            "cover_image": {
+                "height": 232,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/7X1ZZU7UzIghvZrFPTsXTAAelcp7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvMzQvNDAvOTAvMzQ0MDkwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+                "width": 997
+            },
+            "created_at": "2013-04-03T20:27:06Z",
+            "description": {
+                "entities": {
+                    "hashtags": [
+                        {
+                            "len": 13,
+                            "name": "tollfreeplay",
+                            "pos": 91
+                        }
+                    ],
+                    "links": [],
+                    "mentions": []
+                },
+                "html": "<span itemscope=\"https://app.net/schemas/Post\">I never sleep. I'm always waiting in the shadows, watching.<br><br>UTC-0600 MDT&#13;<br>UTC-0700 MST&#13;<br>&#13;<br><span data-hashtag-name=\"tollfreeplay\" itemprop=\"hashtag\">#TollFreePlay</span>&#13;<br>&#13;<br>(I know a bunch of stuff about SQL Server and C#, in that order.)</span>",
+                "text": "I never sleep. I'm always waiting in the shadows, watching.\n\nUTC-0600 MDT\r\nUTC-0700 MST\r\n\r\n#TollFreePlay\r\n\r\n(I know a bunch of stuff about SQL Server and C#, in that order.)"
+            },
+            "follows_you": true,
+            "id": "66331",
+            "is_follower": true,
+            "is_following": true,
+            "is_muted": false,
+            "locale": "en_US",
+            "name": "r@ndolph.ca",
+            "pagination_id": "10000",
+            "timezone": "Canada/Mountain",
+            "type": "human",
+            "username": "rabryst",
+            "verified_domain": "rabryst.ca",
+            "verified_link": "http://rabryst.ca",
+            "you_blocked": false,
+            "you_can_follow": true,
+            "you_can_subscribe": true,
+            "you_follow": true,
+            "you_muted": false
+        },
+        {
+            "avatar_image": {
+                "height": 218,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/OTX03wrNMudaQzJUcWFJQ4VIu8d7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvYTEvOTgvNzAvYTE5ODcwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+                "width": 218
+            },
+            "canonical_url": "https://alpha.app.net/randolph1",
+            "counts": {
+                "followers": 716,
+                "following": 1,
+                "posts": 0,
+                "stars": 8009
+            },
+            "cover_image": {
+                "height": 379,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/PAfbDFn3VYl5YC2Ds2mWPgWRhYF7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvODEvOTgvNzAvODE5ODcwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+                "width": 1632
+            },
+            "created_at": "2012-08-18T00:19:57Z",
+            "description": {
+                "entities": {
+                    "hashtags": [],
+                    "links": [],
+                    "mentions": [
+                        {
+                            "id": "66331",
+                            "len": 8,
+                            "name": "rabryst",
+                            "pos": 14
+                        }
+                    ]
+                },
+                "html": "<span itemscope=\"https://app.net/schemas/Post\">Please follow <span data-mention-id=\"66331\" data-mention-name=\"rabryst\" itemprop=\"mention\">@rabryst</span></span>",
+                "text": "Please follow @rabryst"
+            },
+            "follows_you": false,
+            "id": "7584",
+            "is_follower": false,
+            "is_following": false,
+            "is_muted": false,
+            "locale": "en_US",
+            "name": "Randolph",
+            "pagination_id": "9999",
+            "timezone": "Canada/Mountain",
+            "type": "human",
+            "username": "randolph1",
+            "you_blocked": false,
+            "you_can_follow": true,
+            "you_can_subscribe": true,
+            "you_follow": false,
+            "you_muted": false
+        },
+        {
+            "avatar_image": {
+                "height": 200,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/l5KTyvVmT3zJgvSMVuwoitTgjtN7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvMjUvMGEvODAvMjUwYTgwMDAwMDAwMDAwMC5wbmciLCJvIjoiIn0",
+                "width": 200
+            },
+            "canonical_url": "https://alpha.app.net/yaas",
+            "counts": {
+                "followers": 26,
+                "following": 2,
+                "posts": 82,
+                "stars": 3
+            },
+            "cover_image": {
+                "height": 600,
+                "is_default": false,
+                "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/8mf0DYCPAXu4cPvk5ETOF7f1HWh7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvZTAvYTQvODAvZTBhNDgwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+                "width": 1920
+            },
+            "created_at": "2014-03-26T19:05:38Z",
+            "description": {
+                "entities": {
+                    "hashtags": [],
+                    "links": [
+                        {
+                            "len": 30,
+                            "pos": 65,
+                            "text": "https://posts.app.net/26688131",
+                            "url": "https://posts.app.net/26688131"
+                        }
+                    ],
+                    "mentions": [
+                        {
+                            "id": "66331",
+                            "len": 8,
+                            "name": "rabryst",
+                            "pos": 55
+                        }
+                    ]
+                },
+                "html": "<span itemscope=\"https://app.net/schemas/Post\">You're Doing It Wrong!<br><br>This service brought to you by <span data-mention-id=\"66331\" data-mention-name=\"rabryst\" itemprop=\"mention\">@rabryst</span><br><br><a href=\"https://posts.app.net/26688131\">https://posts.app.net/26688131</a></span>",
+                "text": "You're Doing It Wrong!\n\nThis service brought to you by @rabryst\n\nhttps://posts.app.net/26688131"
+            },
+            "follows_you": false,
+            "id": "246382",
+            "is_follower": true,
+            "is_following": false,
+            "is_muted": false,
+            "locale": "en_US",
+            "name": "Yelling as a Service",
+            "pagination_id": "9998",
+            "timezone": "America/Edmonton",
+            "type": "human",
+            "username": "yaas",
+            "you_blocked": false,
+            "you_can_follow": true,
+            "you_can_subscribe": true,
+            "you_follow": true,
+            "you_muted": false
+        }
+    ],
+    "meta": {
+        "code": 200,
+        "count": 3,
+        "max_id": "10000",
+        "min_id": "9998",
+        "more": false
+    }
+}

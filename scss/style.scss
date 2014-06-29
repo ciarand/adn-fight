@@ -1,0 +1,39 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'base/grid-settings';
+@import 'base/base';
+
+@import 'partials/colors';
+
+@import 'partials/footer';
+@import 'partials/profile';
+
+.hero__tagline {
+    font-size: golden-ratio(14px, 4);
+}
+
+.hero {
+    $hero-color: $white;
+
+    background-color: $hero-background;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding-bottom: 4em;
+
+    .hero-inner {
+        @include outer-container;
+        @include clearfix;
+        padding: 3em;
+        margin: auto;
+        text-align: center;
+        color: $hero-color;
+
+        button {
+            font-size: golden-ratio(14px, 4);
+            background-color: $hero-button-color;
+            outline: none;
+        }
+    }
+}
+

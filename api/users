@@ -1,0 +1,119 @@
+{
+  "data": [
+    {
+      "avatar_image": {
+        "height": 200,
+        "is_default": false,
+        "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/9ZtMCxPl3kxJvNfn4PcC_-Mxq5Z7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvNTkvOWYvODAvNTk5ZjgwMDAwMDAwMDAwMC5wbmciLCJvIjoiIn0",
+        "width": 200
+      },
+      "canonical_url": "https://alpha.app.net/ciarand",
+      "counts": {
+        "followers": 89,
+        "following": 183,
+        "posts": 3900,
+        "stars": 1791
+      },
+      "cover_image": {
+        "height": 2448,
+        "is_default": false,
+        "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/xNlszujWhHPGszU0-Ya8XTXDCqt7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvZTAvZmUvODAvZTBmZTgwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+        "width": 3264
+      },
+      "created_at": "2013-03-02T01:28:59Z",
+      "description": {
+        "entities": {
+          "hashtags": [],
+          "links": [
+            {
+              "len": 11,
+              "pos": 103,
+              "text": "ciarand.me/",
+              "url": "http://ciarand.me/"
+            },
+            {
+              "len": 18,
+              "pos": 124,
+              "text": "github.com/ciarand",
+              "url": "http://github.com/ciarand"
+            }
+          ],
+          "mentions": []
+        },
+        "html": "<span itemscope=\"https://app.net/schemas/Post\">&#8220;Technically I&#8217;m an adult&#8221; I say as I nurse my headache from eating too many skittles at once&#13;<br>&#13;<br>Blog: <a href=\"http://ciarand.me/\">ciarand.me/</a>&#13;<br>Github: <a href=\"http://github.com/ciarand\">github.com/ciarand</a></span>",
+        "text": "“Technically I’m an adult” I say as I nurse my headache from eating too many skittles at once\r\n\r\nBlog: ciarand.me/\r\nGithub: github.com/ciarand"
+      },
+      "id": "45708",
+      "locale": "en_US",
+      "name": "Ciaran Downey",
+      "pagination_id": "10000",
+      "timezone": "America/Los_Angeles",
+      "type": "human",
+      "username": "ciarand",
+      "verified_domain": "ciarand.me",
+      "verified_link": "http://ciarand.me"
+    },
+    {
+      "avatar_image": {
+        "height": 200,
+        "is_default": false,
+        "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/Nkt5V8pUX7rkoM0O1uILB1INnXN7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvMjcvYjAvOTAvMjdiMDkwMDAwMDAwMDAwMC5wbmciLCJvIjoiIn0",
+        "width": 200
+      },
+      "canonical_url": "https://alpha.app.net/rabryst",
+      "counts": {
+        "followers": 419,
+        "following": 1008,
+        "posts": 23897,
+        "stars": 6681
+      },
+      "cover_image": {
+        "height": 232,
+        "is_default": false,
+        "url": "https://d2rfichhc2fb9n.cloudfront.net/image/5/7X1ZZU7UzIghvZrFPTsXTAAelcp7InMiOiJzMyIsImIiOiJhZG4tdXNlci1hc3NldHMiLCJrIjoiYXNzZXRzL3VzZXIvMzQvNDAvOTAvMzQ0MDkwMDAwMDAwMDAwMC5qcGciLCJvIjoiIn0",
+        "width": 997
+      },
+      "created_at": "2013-04-03T20:27:06Z",
+      "description": {
+        "entities": {
+          "hashtags": [
+            {
+              "len": 13,
+              "name": "tollfreeplay",
+              "pos": 91
+            }
+          ],
+          "links": [],
+          "mentions": []
+        },
+        "html": "<span itemscope=\"https://app.net/schemas/Post\">I never sleep. I'm always waiting in the shadows, watching.<br><br>UTC-0600 MDT&#13;<br>UTC-0700 MST&#13;<br>&#13;<br><span data-hashtag-name=\"tollfreeplay\" itemprop=\"hashtag\">#TollFreePlay</span>&#13;<br>&#13;<br>(I know a bunch of stuff about SQL Server and C#, in that order.)</span>",
+        "text": "I never sleep. I'm always waiting in the shadows, watching.\n\nUTC-0600 MDT\r\nUTC-0700 MST\r\n\r\n#TollFreePlay\r\n\r\n(I know a bunch of stuff about SQL Server and C#, in that order.)"
+      },
+      "follows_you": true,
+      "id": "66331",
+      "is_follower": true,
+      "is_following": true,
+      "is_muted": false,
+      "locale": "en_US",
+      "name": "r@ndolph.ca",
+      "pagination_id": "10000",
+      "timezone": "Canada/Mountain",
+      "type": "human",
+      "username": "rabryst",
+      "verified_domain": "rabryst.ca",
+      "verified_link": "http://rabryst.ca",
+      "you_blocked": false,
+      "you_can_follow": true,
+      "you_can_subscribe": true,
+      "you_follow": true,
+      "you_muted": false
+    }
+  ],
+  "meta": {
+    "code": 200,
+    "count": 1,
+    "max_id": "10000",
+    "min_id": "10000",
+    "more": false
+  }
+}
