@@ -4,8 +4,10 @@ $(function() {
         get_nicerank,
         set_nicerank_node,
         get_target,
+        players = {},
         player_images = {},
         get_player_ready,
+        get_ready,
         fight_button,
         reset_button;
 
@@ -13,9 +15,22 @@ $(function() {
         return $("#js-player-" + num + "__" + mod);
     };
 
-    player_images = {
-        one: get_target("one", "avatar"),
-        two: get_target("two", "avatar")
+    players.one = {
+        nodes: {
+            avatar: get_target("one", "avatar"),
+            username: get_target("one", "username"),
+            username_input: get_target("one", "username-input"),
+            nicerank: get_target("one", "nicerank")
+        }
+    };
+
+    players.two = {
+        nodes: {
+            avatar: get_target("two", "avatar"),
+            username: get_target("two", "username"),
+            username_input: get_target("two", "username-input"),
+            nicerank: get_target("two", "nicerank")
+        }
     };
 
 
@@ -34,8 +49,8 @@ $(function() {
                 avatar_node,
                 promise = $.Deferred();
 
-            username_node = get_target(num, "username");
-            avatar_node   = player_images[num];
+            username_node = players[num].nodes.username;
+            avatar_node   = players[num].nodes.avatar;
 
             username_node.html(data.username);
             avatar_node.attr('src', data.avatar_image.url);
@@ -56,7 +71,7 @@ $(function() {
 
     set_nicerank_node = function(num) {
         return function(resp) {
-            get_target(num, "nicerank").html("" + (Math.round(resp.data[0].rank * 100) / 100));
+            players[num].nodes.nicerank.html("" + (Math.round(resp.data[0].rank * 100) / 100));
 
             return $.Deferred().resolve(resp.data[0].rank);
         };
@@ -69,38 +84,42 @@ $(function() {
             .then(set_nicerank_node(num));
     };
 
+    get_ready = function() {
+        var name_one = players.one.nodes.username_input.val(),
+            name_two = players.two.nodes.username_input.val();
+
+        players.one.nodes.avatar.attr("style", "");
+        players.two.nodes.avatar.attr("style", "");
+
+        return $.when(get_player_ready(name_one, "one"), get_player_ready(name_two, "two"));
+    };
+
     fight_button = $("#js-fight-button");
     reset_button = $("#js-reset-button");
 
     fight_button.on("click", function () {
-        $.when(get_player_ready("ciarand", "one"), get_player_ready("rabryst", "two"))
-            .then(function(nr1, nr2) {
-                var winner = (nr1 > nr2) ? "one" : "two",
-                    loser = (nr1 > nr2) ? "two" : "one"
+        get_ready().then(function(nr1, nr2) {
+            var winner = (nr1 > nr2) ? "one" : "two",
+                loser = (nr1 > nr2) ? "two" : "one"
 
-                player_images[winner].addClass("winner");
-                player_images[loser].addClass("loser");
+            players[winner].nodes.avatar
+                .addClass("winner")
+                .removeClass("spinning")
+                .animate({
+                    width: 250,
+                    height: 250
+                }, 1500);
 
-                $.map(player_images, function(obj) {
-                    obj.removeClass("spinning");
-                });
-
-                player_images[loser].animate({
+            players[loser].nodes.avatar
+                .addClass("loser")
+                .removeClass("spinning")
+                .animate({
                     opacity: .7,
                     padding: "3em"
                 }, 1500);
-
-                player_images[winner].animate({
-                    width: 250,
-                    height: 250,
-                }, 1500);
-            });
-
-        $.map(player_images, function(obj) {
-            obj.addClass("spinning");
         });
 
-        fight_button.addClass("disabled");
-        fight_button.prop("disabled", true);
+        //fight_button.addClass("disabled");
+        //fight_button.prop("disabled", true);
     });
 });
