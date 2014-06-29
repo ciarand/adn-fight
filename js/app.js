@@ -6,7 +6,8 @@ $(function() {
         get_target,
         player_images = {},
         get_player_ready,
-        fight_button;
+        fight_button,
+        reset_button;
 
     get_target = function(num, mod) {
         return $("#js-player-" + num + "__" + mod);
@@ -69,23 +70,30 @@ $(function() {
     };
 
     fight_button = $("#js-fight-button");
+    reset_button = $("#js-reset-button");
+
     fight_button.on("click", function () {
         $.when(get_player_ready("ciarand", "one"), get_player_ready("rabryst", "two"))
             .then(function(nr1, nr2) {
                 var winner = (nr1 > nr2) ? "one" : "two",
-                    loser = (nr1 > nr2) ? "two" : "one";
+                    loser = (nr1 > nr2) ? "two" : "one"
 
-                player_images[winner].animate({
-                    width: 250
-                }, 1500);
+                player_images[winner].addClass("winner");
+                player_images[loser].addClass("loser");
 
-                player_images[loser].animate({
-                    width: 100
-                }, 1500);
+                $.map(player_images, function(obj) {
+                    obj.removeClass("spinning");
+                });
+
+                //fight_button.addClass("hidden");
+                //reset_button.removeClass("hidden");
             });
 
         $.map(player_images, function(obj) {
-            //todo do something cool here
+            obj.addClass("spinning");
         });
+
+        fight_button.addClass("disabled");
+        fight_button.prop("disabled", true);
     });
 });
