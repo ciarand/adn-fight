@@ -212,7 +212,11 @@ input[type="submit"] {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -4em; }
+  margin: 0 auto -4em;
+  background-color: #3d8bcf;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover; }
 
 html, body {
   height: 100%; }
@@ -312,34 +316,104 @@ html, body {
   font-size: 59.30121px; }
 
 .profile__img {
-  border-radius: 50%; }
+  border-radius: 50%;
+  position: relative; }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg); }
+
+  to {
+    -webkit-transform: rotateY(360deg); } }
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotateY(0deg); }
+
+  to {
+    -moz-transform: rotateY(360deg); } }
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
+
+  to {
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg); } }
+.spinning {
+  -webkit-animation-name: spin;
+  -moz-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .spinning:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    animation-play-state: paused; }
+
+.hidden {
+  display: none; }
 
 .hero__tagline {
   font-size: 95.94936px; }
 
-.hero {
-  background-color: #3d8bcf;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  padding-bottom: 4em; }
-  .hero .hero-inner {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3em;
-    margin: auto;
-    text-align: center;
-    color: white; }
-    .hero .hero-inner:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .hero .hero-inner:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .hero .hero-inner button {
-      font-size: 95.94936px;
-      background-color: #ff4136;
-      outline: none; }
+html, body {
+  height: 100%; }
+
+.hero .hero-inner {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3em;
+  margin: auto;
+  text-align: center;
+  color: white; }
+  .hero .hero-inner:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .hero .hero-inner:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.fight-button {
+  font-size: 59.30121px;
+  outline: none;
+  transition-duration: .5s;
+  background-color: #ff4136; }
+  .fight-button:hover {
+    background-color: #ff7169; }
+  .fight-button.disabled {
+    opacity: .7; }
+    .fight-button.disabled:hover {
+      background-color: #ff4136; }
+
+.reset-button {
+  font-size: 59.30121px;
+  outline: none;
+  transition-duration: .5s;
+  background-color: #f012be; }
+  .reset-button:hover {
+    background-color: #f342cb; }
+  .reset-button.disabled {
+    opacity: .7; }
+    .reset-button.disabled:hover {
+      background-color: #f012be; }
