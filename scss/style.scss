@@ -60,3 +60,11 @@ html, body {
 .reset-button {
     @include big-cool-button($reset-button-color);
 }
+
+.loser {
+    //opacity: .7;
+}
+
+.winner {
+    //height: 250px;
+}

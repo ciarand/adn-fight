@@ -85,8 +85,15 @@ $(function() {
                     obj.removeClass("spinning");
                 });
 
-                //fight_button.addClass("hidden");
-                //reset_button.removeClass("hidden");
+                player_images[loser].animate({
+                    opacity: .7,
+                    padding: "3em"
+                }, 1500);
+
+                player_images[winner].animate({
+                    width: 250,
+                    height: 250,
+                }, 1500);
             });
 
         $.map(player_images, function(obj) {
