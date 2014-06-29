@@ -4,6 +4,11 @@
     height: auto !important;
     height: 100%;
     margin: 0 auto -4em;
+
+    background-color: $hero-background;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
 html, body {

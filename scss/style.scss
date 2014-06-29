@@ -8,18 +8,20 @@
 @import 'partials/footer';
 @import 'partials/profile';
 
+.hidden {
+    display: none;
+}
+
 .hero__tagline {
     font-size: golden-ratio(14px, 4);
 }
 
+html, body {
+    height: 100%;
+}
+
 .hero {
     $hero-color: $white;
-
-    background-color: $hero-background;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    padding-bottom: 4em;
 
     .hero-inner {
         @include outer-container;
@@ -29,11 +31,32 @@
         text-align: center;
         color: $hero-color;
 
-        button {
-            font-size: golden-ratio(14px, 4);
-            background-color: $hero-button-color;
-            outline: none;
+    }
+}
+
+@mixin big-cool-button($color) {
+    font-size: golden-ratio(14px, 3);
+    outline: none;
+    transition-duration: .5s;
+    background-color: $color;
+
+    &:hover {
+        background-color: lighten($color, 10);
+    }
+
+    &.disabled {
+        opacity: .7;
+
+        &:hover {
+            background-color: $color;
         }
     }
 }
 
+.fight-button {
+    @include big-cool-button($fight-button-color);
+}
+
+.reset-button {
+    @include big-cool-button($reset-button-color);
+}

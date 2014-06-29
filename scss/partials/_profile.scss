@@ -21,4 +21,31 @@
 
 .profile__img {
     border-radius: 50%;
+    position: relative;
+}
+
+@include keyframes(spin) {
+    from {
+        @include transform(rotateY(0deg));
+    }
+
+    to {
+        @include transform(rotateY(360deg));
+    }
+}
+
+%spinners {
+    @include animation-name(spin);
+    @include animation-duration(2s);
+    @include animation-iteration-count(infinite);
+    @include animation-timing-function(linear);
+    @include transform-style(preserve-3d);
+
+    &:hover {
+        @include animation-play-state(paused);
+    }
+}
+
+.spinning {
+    @extend %spinners;
 }
