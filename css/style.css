@@ -296,10 +296,9 @@ html, body {
   width: 40.29137%; }
   .profile:last-child {
     margin-right: 0; }
-  .profile:nth-child(2n) {
-    margin-right: 0; }
-  .profile:nth-child(2n+1) {
-    clear: left; }
+
+.profile--last {
+  margin-right: 0; }
 
 .hero__vs {
   float: left;
@@ -313,8 +312,7 @@ html, body {
   font-size: 59.30121px; }
 
 .profile__img {
-  border-radius: 50%;
-  height: 200px; }
+  border-radius: 50%; }
 
 .hero__tagline {
   font-size: 95.94936px; }

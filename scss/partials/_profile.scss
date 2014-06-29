@@ -5,7 +5,10 @@
 
 .profile {
     @include span-columns(5 of 12);
-    @include omega(2n);
+}
+
+.profile--last {
+    @include omega;
 }
 
 .hero__vs {
