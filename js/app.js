@@ -20,7 +20,7 @@ $(function() {
 
     get_player_details = function(p) {
         return $.ajax({
-            url: "/api/adn/" + p + ".json",
+            url: "https://api.app.net/users/@" + p,
             dataType: "json",
             type: "GET"
         });
@@ -28,7 +28,7 @@ $(function() {
 
     render_player = function(num) {
         return function(resp) {
-            var data = resp.data[0],
+            var data = resp.data,
                 username_node,
                 avatar_node,
                 promise = $.Deferred();
@@ -45,7 +45,7 @@ $(function() {
 
     get_nicerank = function(resp) {
         return $.ajax({
-            url: "http://api.nice.social/user/nicerank?ids=" + resp.data[0].id,
+            url: "http://api.nice.social/user/nicerank?ids=" + resp.data.id,
             //url: "/api/nicerank/" + id,
             crossDomain: true,
             dataType: "json",
@@ -85,14 +85,7 @@ $(function() {
             });
 
         $.map(player_images, function(obj) {
-
+            //todo do something cool here
         });
-
-        /*
-        $.when(get_player_details("ciarand"), get_player_details("rabryst")).done(function(p1, p2) {
-            render_player("one", p1[0].data[0]);
-            render_player("two", p2[0].data[0]);
-        });
-        */
     });
 });
