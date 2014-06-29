@@ -1,0 +1,11 @@
+{
+    "meta": {
+        "code": 200,
+            "more": false
+    },
+    "data": [{
+        "user_id": 66331,
+        "rank": 3.90135,
+        "is_human": true
+    }]
+}

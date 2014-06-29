@@ -1,85 +1,98 @@
-// look, I don't like protypical inheritance ok
-window.ENV = {};
-ENV.EXTEND_PROTOTYPES = false;
+$(function() {
+    var get_player_details,
+        render_player,
+        get_nicerank,
+        set_nicerank_node,
+        get_target,
+        player_images = {},
+        get_player_ready,
+        fight_button;
 
-window.App = Ember.Application.create({
-    LOG_TRANSITIONS: true
-});
+    get_target = function(num, mod) {
+        return $("#js-player-" + num + "__" + mod);
+    };
 
-App.Router.map(function() {
-    // noop
-});
+    player_images = {
+        one: get_target("one", "avatar"),
+        two: get_target("two", "avatar")
+    };
 
-App.IndexRoute = Ember.Route.extend({
-      model: function() {
-          return this.store.findAll("user");
-      }
-});
 
-App.Store = DS.Store.extend({
-    adapter: App.UserAdapter
-});
+    get_player_details = function(p) {
+        return $.ajax({
+            url: "/api/adn/" + p + ".json",
+            dataType: "json",
+            type: "GET"
+        });
+    };
 
-App.User = DS.Model.extend({
-    canonicalUrl:  DS.attr("string"),
-    name:          DS.attr("string"),
-    username:      DS.attr("string"),
-    avatarUrl:     DS.attr("string"),
-    description:   DS.attr("string"),
-    niceRank:      DS.belongsTo("nicerank", {})
-});
+    render_player = function(num) {
+        return function(resp) {
+            var data = resp.data[0],
+                username_node,
+                avatar_node,
+                promise = $.Deferred();
 
-App.Nicerank = DS.Model.extend({
-    rank:      DS.attr("number"),
-    isHuman:   DS.attr("boolean"),
-    user:      DS.belongsTo("user", {})
-});
+            username_node = get_target(num, "username");
+            avatar_node   = player_images[num];
 
-App.UserAdapter = DS.RESTAdapter.extend({
-    namespace: "api"
-});
+            username_node.html(data.username);
+            avatar_node.attr('src', data.avatar_image.url);
 
-App.UserSerializer = DS.RESTSerializer.extend({
-    extract: function (store, type, payload, id, requestType) {
-        // just grab the "data" key out
-        return this._super(store, type, {"users": payload.data}, id, requestType);
-    },
-    normalize: function (type, hash, prop) {
-        hash = {
-            id:            hash.id,
-            canonicalUrl:  hash.canonical_url,
-            name:          hash.name,
-            username:      hash.username,
-            avatarUrl:     hash.avatar_image.url,
-            description:   hash.description.html,
-            niceRank:      App.User.store.find("nicerank", hash.id)
+            return promise.resolve(resp);
         };
+    };
 
-        debugger;
-        return hash;
-    }
-});
+    get_nicerank = function(resp) {
+        return $.ajax({
+            url: "http://api.nice.social/user/nicerank?ids=" + resp.data[0].id,
+            //url: "/api/nicerank/" + id,
+            crossDomain: true,
+            dataType: "json",
+            type: "GET"
+        });
+    };
 
-App.NicerankAdapter = DS.RESTAdapter.extend({
-    namespace: "user/nicerank",
-    host: "http://api.search-adn.net",
-    buildURL: function (type, id) {
-        return this._super(type, "?ids=" + id);
-    }
-});
+    set_nicerank_node = function(num) {
+        return function(resp) {
+            get_target(num, "nicerank").html("" + (Math.round(resp.data[0].rank * 100) / 100));
 
-App.NicerankSerializer = DS.RESTSerializer.extend({
-    extract: function (store, type, payload, id, requestType) {
-        // just grab the "data" key out
-        return this._super(store, type, {"niceranks": payload.data}, id, requestType);
-    },
-    normalize: function (type, hash, prop) {
-        hash = {
-            id: hash.user_id,
-            rank: hash.rank,
-            isHuman: hash.is_human
+            return $.Deferred().resolve(resp.data[0].rank);
         };
+    };
 
-        return hash;
-    }
+    get_player_ready = function(name, num) {
+        return get_player_details(name)
+            .then(render_player(num))
+            .then(get_nicerank)
+            .then(set_nicerank_node(num));
+    };
+
+    fight_button = $("#js-fight-button");
+    fight_button.on("click", function () {
+        $.when(get_player_ready("ciarand", "one"), get_player_ready("rabryst", "two"))
+            .then(function(nr1, nr2) {
+                var winner = (nr1 > nr2) ? "one" : "two",
+                    loser = (nr1 > nr2) ? "two" : "one";
+
+                player_images[winner].animate({
+                    width: 250
+                }, 1500);
+
+                player_images[loser].animate({
+                    width: 100
+                }, 1500);
+            });
+
+        $.map(player_images, function(obj) {
+
+        });
+
+        /*
+        $.when(get_player_details("ciarand"), get_player_details("rabryst")).done(function(p1, p2) {
+            render_player("one", p1[0].data[0]);
+            render_player("two", p2[0].data[0]);
+        });
+        */
+    });
 });

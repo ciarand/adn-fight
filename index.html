@@ -1,110 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Ember Starter Kit</title>
-
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>ADN Fight!</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-    <!-- main index partial partial -->
-    <script type="text/x-handlebars" data-template-name="index">
-        <div class="profile-container">
-            <h1 class="hero__tagline">ADN Fight!</h1>
-            <div class="hero__profiles">
-                {{#with firstObject}}
-                    {{partial 'profile'}}
-                {{/with}}
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="hero">
+                <div class="hero-inner">
+                    <!-- main index partial partial -->
+                    <div class="profile-container">
+                        <h1 class="hero__tagline">ADN Fight!</h1>
+                        <div class="hero__profiles">
+                            <div class="profile profile--first">
+                                <h1 class="profile__name">
+                                    <span id="js-player-one__username"></span>
+                                </h1>
 
-                <div class="hero__vs">
-                    <h1 class="profile__name">VS.</h1>
-                </div>
+                                <div class="profile__img">
+                                    <img id="js-player-one__avatar" class="profile__img"/>
+                                </div>
+                                <h1>Nice rank: <span id="js-player-one__nicerank"></span></h1>
+                            </div>
+                            <div class="hero__vs"><h1 class="profile__name">VS.</h1></div>
+                            <div class="profile profile--last">
+                                <h1 class="profile__name">
+                                    <span id="js-player-two__username"></span>
+                                </h1>
 
-                {{#with lastObject}}
-                    {{partial 'profile'}}
-                {{/with}}
-            </div>
-        </div>
-    </script>
-    <!-- container -->
-    <script type="text/x-handlebars" data-template-name="application">
-        <div class="content-wrapper">
-            <div class="content">
-                <div class="hero">
-                    <div class="hero-inner">
-                        <a href="" class="hero-logo">
-                            <img src="" alt="">
-                        </a>
-
-                        {{outlet}}
-                        <button class="button button-rounded button-flat">FIGHT!</button>
+                                <div class="profile__img">
+                                    <img id="js-player-two__avatar" class="profile__img"/>
+                                </div>
+                                <h1>Nice rank: <span id="js-player-two__nicerank"></span></h1>
+                            </div>
+                        </div>
                     </div>
+                    <button id="js-fight-button" class="button button-rounded button-flat">FIGHT!</button>
                 </div>
             </div>
-
-            <div class="push"></div>
         </div>
-
-        {{partial "footer"}}
-    </script>
-
-    <!-- profile partial -->
-    <script type="text/x-handlebars" data-template-name="profile">
-        <div class="profile">
-            <h1 class="profile__name">@{{username}}</h1>
-            <div class="profile__img">
-                <img class="profile__img" {{bind-attr src=avatarUrl}}>
-            </div>
-            <h1>Nice rank: {{niceRank.rank}}</h1>
-            {{blah}}
-            <!--
-            <p>{{{description}}}</p>
-            -->
+        <div class="push"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src alt />
         </div>
-    </script>
-    <script type="text/x-handlebars" data-template-name="footer">
-        <footer class="footer">
-            <div class="footer-logo">
-                <img src="" alt="">
-            </div>
+        <ul>
+            <li><a href="javascript:void(0)">About</a></li>
+            <li><a href="javascript:void(0)">Contact</a></li>
+            <li><a href="javascript:void(0)">Products</a></li>
+        </ul>
+        <div class="footer-secondary-links">
             <ul>
-                <li><a href="javascript:void(0)">About</a></li>
-                <li><a href="javascript:void(0)">Contact</a></li>
-                <li><a href="javascript:void(0)">Products</a></li>
+                <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+                <li><a href="javascript:void(0)">Privacy Policy</a></li>
             </ul>
+            <ul class="footer-social">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src alt />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src alt />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src alt />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
-            <div class="footer-secondary-links">
-                <ul>
-                    <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-                    <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                </ul>
-
-                <ul class="footer-social">
-                    <li><a href="javascript:void(0)">
-                        <img src="" alt="">
-                    </a></li>
-                    <li><a href="javascript:void(0)">
-                        <img src="" alt="">
-                    </a></li>
-                    <li><a href="javascript:void(0)">
-                        <img src="" alt="">
-                    </a></li>
-                </ul>
-            </div>
-        </footer>
-    </script>
-
-    <!-- libs -->
-    <script src="js/libs/jquery-1.10.2.js"></script>
-    <script src="js/libs/handlebars-1.1.2.js"></script>
-    <script src="js/libs/ember-1.5.1.js"></script>
-    <script src="js/libs/ember-data.js"></script>
+    <script src="js/vendor.min.js"></script>
     <script src="js/app.js"></script>
-
-    <!-- to activate the test runner, add the "?test" query string parameter -->
-    <script src="tests/runner.js"></script>
+    <!--
+    <script src="js/app.min.js"></script>
+    -->
 </body>
 </html>
